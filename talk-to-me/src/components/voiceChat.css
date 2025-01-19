@@ -1,0 +1,60 @@
+.voice-chat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f7fafc;
+}
+
+.voice-chat button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: #4299e1;
+  color: white;
+  border-radius: 9999px;
+  transition: transform 0.3s;
+}
+
+.voice-chat button:hover {
+  background-color: #3182ce;
+}
+
+.voice-chat button.animate-zoom-fade {
+  animation: zoom-fade 1s infinite;
+}
+
+@keyframes zoom-fade {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+.transcript {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 75%;
+  max-width: 32rem;
+  text-align: center;
+}
+
+.transcript h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.transcript p {
+  color: #4a5568;
+}

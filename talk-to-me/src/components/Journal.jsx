@@ -74,7 +74,7 @@ const Journal = () => {
         } w-full mx-auto`}
       >
         <h1 className="text-2xl font-bold mb-4">Journal Your Day</h1>
-        <div className="w-full flex flex-col items-center">
+        <div className="w-full overflow-y-scroll max-h-[70vh] flex flex-col items-center">
           <div className="mb-4 w-1/2">
             <label
               htmlFor="dayStatus"
