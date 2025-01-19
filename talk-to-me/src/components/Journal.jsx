@@ -22,28 +22,39 @@ const Journal = () => {
 
     try {
       // Make a request to OpenAI API directly (client-side)
-      const response = await axios.post("https://api.openai.com/v1/chat/completions", 
-      {
-        model: "gpt-4o-mini",
-        messages: [
-          { role: "system", content: "You are a helpful assistant that summarizes journal entries in a positive and motivating tone, do that in about a 30-50 words, focus on motivating and showing the positives of how the day went and some tips to do better." },
-          { role: "user", content: `Summarize the following journal in a positive and motivating tone: ${inputText}` }
-        ],
-        max_tokens: 120,
-        temperature: 0.7,
-      }, 
-      {
-        headers: {
-          "Authorization": `Bearer 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`,
-          "Content-Type": "application/json",
+      const response = await axios.post(
+        "https://api.openai.com/v1/chat/completions",
+        {
+          model: "gpt-4o-mini",
+          messages: [
+            {
+              role: "system",
+              content:
+                "You are a helpful assistant that summarizes journal entries in a positive and motivating tone, do that in about a 30-50 words, focus on motivating and showing the positives of how the day went and some tips to do better.",
+            },
+            {
+              role: "user",
+              content: `Summarize the following journal in a positive and motivating tone: ${inputText}`,
+            },
+          ],
+          max_tokens: 120,
+          temperature: 0.7,
+        },
+        {
+          headers: {
+            Authorization: `Bearer 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`,
+            "Content-Type": "application/json",
+          },
         }
-      });
+      );
 
       // Set the AI-generated summary as the response
       setSummary(response.data.choices[0].message.content.trim());
     } catch (error) {
       console.error("Error generating summary:", error);
-      setSummary("Sorry, there was an error generating the summary. Please try again.");
+      setSummary(
+        "Sorry, there was an error generating the summary. Please try again."
+      );
     } finally {
       setLoading(false); // Stop loading
       setExpanded(true); // Expand the container after submission
@@ -57,17 +68,18 @@ const Journal = () => {
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-gradient-to-t from-blue-50 to-white pb-20">
-      <div className={`flex-grow flex flex-col items-center justify-start bg-gray-100 p-4 transition-all duration-300 ${expanded ? "h-auto" : "h-full"}`}>
-        <div className="flex items-center justify-start w-full mb-4">
-          <button onClick={goBack} className="text-blue-500 flex items-center">
-            <FaArrowLeft className="mr-2" /> Talk to Me
-          </button>
-        </div>
-
+      <div
+        className={`flex-grow flex flex-col items-center justify-start bg-gray-100 p-4 transition-all duration-300 ${
+          expanded ? "h-auto" : "h-full"
+        } w-full mx-auto`}
+      >
         <h1 className="text-2xl font-bold mb-4">Journal Your Day</h1>
-        <div className="w-full max-w-md">
-          <div className="mb-4">
-            <label htmlFor="dayStatus" className="block text-sm font-medium mb-2">
+        <div className="w-full flex flex-col items-center">
+          <div className="mb-4 w-1/2">
+            <label
+              htmlFor="dayStatus"
+              className="block text-sm font-medium mb-2"
+            >
               How was the day?
             </label>
             <textarea
@@ -79,8 +91,11 @@ const Journal = () => {
             />
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="whatWentWell" className="block text-sm font-medium mb-2">
+          <div className="mb-4 w-1/2">
+            <label
+              htmlFor="whatWentWell"
+              className="block text-sm font-medium mb-2"
+            >
               What went well?
             </label>
             <textarea
@@ -92,8 +107,11 @@ const Journal = () => {
             />
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="whatNotWentWell" className="block text-sm font-medium mb-2">
+          <div className="mb-4 w-1/2">
+            <label
+              htmlFor="whatNotWentWell"
+              className="block text-sm font-medium mb-2"
+            >
               What did not go well?
             </label>
             <textarea
@@ -107,14 +125,14 @@ const Journal = () => {
 
           <button
             onClick={handleSubmit}
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded"
+            className="w-1/2 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded"
             disabled={loading}
           >
             {loading ? "Generating..." : "Submit"}
           </button>
 
           {summary && (
-            <div className="mt-6 bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 rounded shadow-md">
+            <div className="mt-6 bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 rounded shadow-md w-1/2">
               <p className="text-center">{summary}</p>
             </div>
           )}
