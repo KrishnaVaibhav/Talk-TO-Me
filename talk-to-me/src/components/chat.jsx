@@ -69,12 +69,14 @@ const AIChatbot = () => {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gradient-to-t from-blue-50 to-white pb-20">
-      <div className="flex-grow flex flex-col items-center justify-start bg-gray-100 p-4 w-full">
-        <h1 className="text-3xl font-bold mb-6 text-center">AI Chatbot</h1>
+    <div className="flex flex-col items-center min-h-screen bg-gradient-to-t from-[#ADE1FB] to-white pb-20">
+      <div className="flex-grow flex flex-col items-center justify-start from-[#ADE1FB] to-whitep-4 w-full">
+        <h1 className="text-3xl font-bold mb-6 text-center text-white">
+          AI Chatbot
+        </h1>
 
-        <div className="fixed bottom-14 w-full bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="flex flex-col p-4 max-h-[70vh] overflow-y-scroll bg-gray-100">
+        <div className="fixed bottom-14 w-full from-[#ADE1FB] to-white rounded-lg shadow-lg overflow-hidden">
+          <div className="flex flex-col p-4 max-h-[70vh] overflow-y-scroll from-[#ADE1FB] to-white">
             {conversation.map((msg, index) => (
               <div
                 key={index}
@@ -85,8 +87,8 @@ const AIChatbot = () => {
                 <div
                   className={`max-w-[70%] p-3 rounded-full ${
                     msg.sender === "user"
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-200 text-gray-800"
+                      ? "bg-[#266CA9] text-white"
+                      : "bg-[#01082D] text-white"
                   }`}
                 >
                   <p>{msg.message}</p>
@@ -95,17 +97,17 @@ const AIChatbot = () => {
             ))}
           </div>
 
-          <div className="flex items-center p-4 bg-white border-t">
+          <div className="flex items-center p-4 bg-[#ADE1FB] border-t border-transparent">
             <textarea
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
               placeholder="Type your message here..."
-              className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-[#266CA9]"
               rows="2"
             />
             <button
               onClick={handleSubmit}
-              className="ml-3 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg"
+              className="ml-3 bg-[#041D56] hover:bg-[#01082D] text-white font-medium py-2 px-4 rounded-lg"
               disabled={loading}
             >
               {loading ? "Thinking..." : "Send"}

@@ -20,21 +20,21 @@ const Footer = () => {
   return (
     <div>
       <FaHome
-        className="fixed top-6 left-10 text-gray-600 text-3xl hover:text-blue-600 cursor-pointer transition-all duration-300 z-50"
+        className="fixed top-6 left-10 text-[#041D56] text-3xl hover:text-[#266CA9] cursor-pointer transition-all duration-300 z-50"
         onClick={() => handleClick("Home")}
       />
-      <div className="fixed bottom-0 left-0 right-0 bg-white py-4 shadow-lg">
-        <div className="flex justify-around text-gray-600 text-3xl">
+      <div className="fixed bottom-0 left-0 right-0 bg-[#ADE1FB] py-4 shadow-lg">
+        <div className="flex justify-around text-[#041D56] text-3xl">
           <FaBook
-            className="hover:text-teal-500 cursor-pointer transition-all duration-300"
+            className="hover:text-[#0F2573] cursor-pointer transition-all duration-300"
             onClick={() => handleClick("Journal")}
           />
           <FaComments
-            className="hover:text-teal-500 cursor-pointer transition-all duration-300"
+            className="hover:text-[#0F2573] cursor-pointer transition-all duration-300"
             onClick={() => handleClick("Chat")}
           />
           <FaMicrophone
-            className="hover:text-teal-500 cursor-pointer transition-all duration-300"
+            className="hover:text-[#0F2573] cursor-pointer transition-all duration-300"
             onClick={() => handleClick("Microphone")}
           />
         </div>

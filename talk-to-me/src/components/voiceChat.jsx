@@ -53,7 +53,7 @@ const VoiceChat = () => {
   };
 
   return (
-    <div className="voice-chat flex flex-col items-center justify-center h-screen bg-gray-100">
+    <div className="voice-chat flex flex-col items-center justify-center h-screen bg-gray-100 from-[#ADE1FB] to-white">
       <button
         onClick={handleRecord}
         className={`flex items-center justify-center p-6 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-transform duration-300 ${
