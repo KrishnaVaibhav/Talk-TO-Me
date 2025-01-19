@@ -37,7 +37,7 @@ const AIChatbot = () => {
         },
         {
           headers: {
-            Authorization: `Bearer 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`,
+            Authorization: `Bearer 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`,
             "Content-Type": "application/json",
           },
         }
