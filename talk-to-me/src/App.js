@@ -7,6 +7,7 @@ import Journal from "./components/Journal";
 import Footer from "./components/Footer"; // Import Footer
 import { ChatProvider } from "./context/chatContext";
 import Chat from "./components/chat";
+import VoiceChat from "./components/voiceChat";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path="/journal" element={<Journal />} />
               <Route path="*" element={<P404 />} />
               <Route path="/chat" element={<Chat />} />
+              <Route path="/voice" element={<VoiceChat />} />
             </Routes>
           </div>
           <Footer />

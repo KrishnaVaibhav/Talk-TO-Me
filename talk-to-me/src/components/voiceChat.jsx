@@ -1,36 +1,28 @@
 import React, { useState } from "react";
+import { FaMicrophone, FaMicrophoneSlash } from "react-icons/fa";
 
 const VoiceChat = () => {
   const [isRecording, setIsRecording] = useState(false);
-  const [messages, setMessages] = useState([]);
 
   const handleRecord = () => {
     setIsRecording(!isRecording);
     // Add logic to start/stop recording
   };
 
-  const handleSend = (message) => {
-    setMessages([...messages, message]);
-    // Add logic to send the message
-  };
-
   return (
-    <div className="voice-chat">
-      <div className="messages">
-        {messages.map((msg, index) => (
-          <div key={index} className="message">
-            {msg}
-          </div>
-        ))}
-      </div>
-      <div className="controls">
-        <button onClick={handleRecord}>
-          {isRecording ? "Stop Recording" : "Start Recording"}
-        </button>
-        <button onClick={() => handleSend("Sample message")}>
-          Send Message
-        </button>
-      </div>
+    <div className="voice-chat flex items-center justify-center h-screen bg-gray-100">
+      <button
+        onClick={handleRecord}
+        className={`flex items-center justify-center p-6 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-transform duration-300 ${
+          isRecording ? "transform scale-125" : "transform scale-100"
+        }`}
+      >
+        {isRecording ? (
+          <FaMicrophoneSlash className="text-4xl" />
+        ) : (
+          <FaMicrophone className="text-4xl" />
+        )}
+      </button>
     </div>
   );
 };

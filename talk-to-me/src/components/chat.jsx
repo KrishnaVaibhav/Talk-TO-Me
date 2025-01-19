@@ -69,12 +69,12 @@ const AIChatbot = () => {
   };
 
   return (
-    <div className=" flex flex-col items-center min-h-screen bg-gradient-to-t from-blue-50 to-white pb-20">
-      <div className="flex-grow flex flex-col items-center justify-start bg-gray-100 p-4 w-full ">
+    <div className="flex flex-col items-center min-h-screen bg-gradient-to-t from-blue-50 to-white pb-20">
+      <div className="flex-grow flex flex-col items-center justify-start bg-gray-100 p-4 w-full">
         <h1 className="text-3xl font-bold mb-6 text-center">AI Chatbot</h1>
 
-        <div className="fixed bottom-14 w-full  bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="flex flex-col p-4 h-auto overflow-y-scroll bg-gray-100">
+        <div className="fixed bottom-14 w-full bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="flex flex-col p-4 max-h-[70vh] overflow-y-scroll bg-gray-100">
             {conversation.map((msg, index) => (
               <div
                 key={index}
