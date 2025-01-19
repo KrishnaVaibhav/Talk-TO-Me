@@ -41,7 +41,7 @@ const AIChatbot = () => {
         },
         {
           headers: {
-            "Authorization": `Bearer openai`,
+            "Authorization": `Bearer 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`,
             "Content-Type": "application/json",
           },
         }
