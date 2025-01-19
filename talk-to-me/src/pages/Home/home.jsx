@@ -104,45 +104,47 @@ const Home = () => {
   const progressPercentage = ((600 - timer) / 600) * 100;
 
   return (
-    <div className="fixed left-0 right-0 flex flex-col items-center min-h-screen bg-gradient-to-t from-blue-50 to-white pb-20">
+    <div className="fixed left-0 right-0 flex flex-col items-center min-h-screen bg-gradient-to-t from-[#ADE1FB] to-white pb-20">
       <div className="container flex-grow w-full mx-auto bg-white rounded-lg shadow-lg p-6">
         {/* Header Section */}
-        <h1 className="text-2xl font-semibold text-center text-teal-600 mb-2">
+        <h1 className="text-2xl font-semibold text-center text-[#266CA9] mb-2">
           Talk to Me
         </h1>
-        <p className="text-center text-sm font-medium text-gray-600 mb-4">
+        <p className="text-center text-sm font-medium text-[#0F2573] mb-4">
           A Gen AI based Workplace Stress Management Assistant
         </p>
-        <p className="text-center text-lg text-gray-700 mb-6">{greeting}</p>
+        <p className="text-center text-lg text-[#041D56] mb-6">{greeting}</p>
         {/* Quote Section */}
-        <div className="bg-teal-100 border-l-4 border-teal-600 text-teal-700 p-4 mt-6 rounded-lg shadow-md">
+        <div className="bg-[#ADE1FB] border-l-4 border-[#266CA9] text-[#266CA9] p-4 mt-6 rounded-lg shadow-md">
           <p className="text-center text-lg italic">"{quote}"</p>
         </div>
         {/* Dashboard Table Section */}
-        <div className="mt-8 bg-teal-50 border-l-4 border-teal-600 text-teal-700 p-4 rounded-lg shadow-lg bg-opacity-60 backdrop-blur-sm">
+        <div className="mt-8 bg-[#ADE1FB] border-l-4 border-[#266CA9] text-[#266CA9] p-4 rounded-lg shadow-lg bg-opacity-60 backdrop-blur-sm">
           <div className="flex flex-col md:flex-row justify-around w-full">
             <div className="flex flex-col items-center mb-4 md:mb-0">
-              <FaHeartbeat className="text-teal-600 mb-2" />
-              <span className="text-sm font-small text-teal-600">
+              <FaHeartbeat className="text-[#266CA9] mb-2" />
+              <span className="text-sm font-small text-[#266CA9]">
                 Heartbeat
               </span>
-              <span className="py-4 text-small text-gray-700">
+              <span className="py-4 text-small text-[#041D56]">
                 {heartbeat} bpm
               </span>
             </div>
             <div className="flex flex-col items-center mb-4 md:mb-0">
-              <FaTint className="text-teal-600 mb-2" />
-              <span className="text-sm font-small text-teal-600">
+              <FaTint className="text-[#266CA9] mb-2" />
+              <span className="text-sm font-small text-[#266CA9]">
                 Blood Pressure
               </span>
-              <span className="py-4 text-small text-gray-700">
+              <span className="py-4 text-small text-[#041D56]">
                 {bloodPressure}
               </span>
             </div>
             <div className="flex flex-col items-center">
-              <FaWalking className="text-teal-600 mb-2" />
-              <span className="text-sm font-small text-teal-600">Movement</span>
-              <span className="py-4 text-small text-gray-700">
+              <FaWalking className="text-[#266CA9] mb-2" />
+              <span className="text-sm font-small text-[#266CA9]">
+                Movement
+              </span>
+              <span className="py-4 text-small text-[#041D56]">
                 {steps} steps
               </span>
             </div>
@@ -150,36 +152,36 @@ const Home = () => {
         </div>
         {/* Buttons Section */}
         <div className="flex flex-col md:flex-row justify-around mt-4">
-          <button className="bg-teal-400 hover:bg-teal-500 text-white font-small py-2 px-6 rounded-lg shadow-sm mb-2 md:mb-0 md:mr-2">
+          <button className="bg-[#266CA9] hover:bg-[#0F2573] text-white font-small py-2 px-6 rounded-lg shadow-sm mb-2 md:mb-0 md:mr-2">
             Movement reminder
           </button>
-          <button className="bg-teal-400 hover:bg-teal-500 text-white font-small py-2 px-6 rounded-lg shadow-sm mb-2 md:mb-0 md:mr-2">
+          <button className="bg-[#266CA9] hover:bg-[#0F2573] text-white font-small py-2 px-6 rounded-lg shadow-sm mb-2 md:mb-0 md:mr-2">
             Water reminder
           </button>
-          <button className="bg-teal-400 hover:bg-teal-500 text-white font-small py-2 px-6 rounded-lg shadow-sm">
+          <button className="bg-[#266CA9] hover:bg-[#0F2573] text-white font-small py-2 px-6 rounded-lg shadow-sm">
             Breathing exercise reminder
           </button>
         </div>
         {/* Challenges Section */}
-        <div className="mt-8 bg-teal-50 border-l-4 border-teal-600 text-teal-700 p-4 rounded-lg shadow-lg bg-opacity-60 backdrop-blur-sm">
-          <h2 className="text-xl font-semibold text-center text-teal-600 mb-4">
+        <div className="mt-8 bg-[#ADE1FB] border-l-4 border-[#266CA9] text-[#266CA9] p-4 rounded-lg shadow-lg bg-opacity-60 backdrop-blur-sm">
+          <h2 className="text-xl font-semibold text-center text-[#266CA9] mb-4">
             Challenge
           </h2>
           <div className="text-center">
             <button
               onClick={openModal}
-              className="bg-teal-400 hover:bg-teal-500 text-white font-small py-2 px-6 rounded-lg shadow-sm"
+              className="bg-[#266CA9] hover:bg-[#0F2573] text-white font-small py-2 px-6 rounded-lg shadow-sm"
             >
               Complete a 10-minute meditation
             </button>
           </div>
         </div>
         {/* Recommendations Section */}
-        <div className="mt-8 bg-teal-50 border-l-4 border-teal-600 text-teal-700 p-4 rounded-lg shadow-lg bg-opacity-60 backdrop-blur-sm">
-          <h2 className="text-xl font-semibold text-center text-teal-600 mb-4">
+        <div className="mt-8 bg-[#ADE1FB] border-l-4 border-[#266CA9] text-[#266CA9] p-4 rounded-lg shadow-lg bg-opacity-60 backdrop-blur-sm">
+          <h2 className="text-xl font-semibold text-center text-[#266CA9] mb-4">
             Recommendations
           </h2>
-          <ul className="list-none text-gray-700">
+          <ul className="list-none text-[#041D56]">
             {recommendations.map((rec, index) => (
               <li
                 key={index}
@@ -207,11 +209,11 @@ const Home = () => {
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white rounded-lg shadow-lg p-8 w-96">
-            <h2 className="text-xl font-semibold text-center text-teal-600 mb-4">
+            <h2 className="text-xl font-semibold text-center text-[#266CA9] mb-4">
               Meditation Timer
             </h2>
-            <div className="flex flex-col items-center text-gray-700 mb-4">
-              <FaHourglassHalf className="text-teal-600 text-6xl mb-2" />
+            <div className="flex flex-col items-center text-[#041D56] mb-4">
+              <FaHourglassHalf className="text-[#266CA9] text-6xl mb-2" />
               <div className="text-2xl">
                 {Math.floor(timer / 60)}:{("0" + (timer % 60)).slice(-2)}
               </div>
@@ -224,7 +226,7 @@ const Home = () => {
             <div className="text-center">
               <button
                 onClick={closeModal}
-                className="bg-teal-400 hover:bg-teal-500 text-white font-small py-2 px-6 rounded-lg shadow-sm"
+                className="bg-[#266CA9] hover:bg-[#0F2573] text-white font-small py-2 px-6 rounded-lg shadow-sm"
               >
                 Close
               </button>

@@ -67,24 +67,26 @@ const Journal = () => {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gradient-to-t from-blue-50 to-white pb-20">
+    <div className="flex flex-col items-center min-h-screen bg-gradient-to-t from-[#ADE1FB] to-white pb-20">
       <div
-        className={`flex-grow flex flex-col items-center justify-start bg-gray-100 p-4 transition-all duration-300 ${
+        className={`flex-grow flex flex-col items-center justify-startfrom-[#ADE1FB] to-white p-4 transition-all duration-300 ${
           expanded ? "h-auto" : "h-full"
         } w-full mx-auto`}
       >
-        <h1 className="text-2xl font-bold mb-4">Journal Your Day</h1>
+        <h1 className="text-2xl font-bold mb-4 text-[#01082D]">
+          Journal Your Day
+        </h1>
         <div className="w-full overflow-y-scroll max-h-[70vh] flex flex-col items-center">
           <div className="mb-4 w-1/2">
             <label
               htmlFor="dayStatus"
-              className="block text-sm font-medium mb-2"
+              className="block text-sm font-medium mb-2 text-[#01082D]"
             >
               How was the day?
             </label>
             <textarea
               id="dayStatus"
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded border-[#01082D]"
               rows="3"
               value={dayStatus}
               onChange={(e) => setDayStatus(e.target.value)}
@@ -94,13 +96,13 @@ const Journal = () => {
           <div className="mb-4 w-1/2">
             <label
               htmlFor="whatWentWell"
-              className="block text-sm font-medium mb-2"
+              className="block text-sm font-medium mb-2 text-[#01082D]"
             >
               What went well?
             </label>
             <textarea
               id="whatWentWell"
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded border-[#01082D]"
               rows="3"
               value={whatWentWell}
               onChange={(e) => setWhatWentWell(e.target.value)}
@@ -110,13 +112,13 @@ const Journal = () => {
           <div className="mb-4 w-1/2">
             <label
               htmlFor="whatNotWentWell"
-              className="block text-sm font-medium mb-2"
+              className="block text-sm font-medium mb-2 text-[#01082D]"
             >
               What did not go well?
             </label>
             <textarea
               id="whatNotWentWell"
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border rounded border-[#01082D]"
               rows="3"
               value={whatNotWentWell}
               onChange={(e) => setWhatNotWentWell(e.target.value)}
@@ -125,14 +127,14 @@ const Journal = () => {
 
           <button
             onClick={handleSubmit}
-            className="w-1/2 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded"
+            className="w-1/2 bg-[#041D56] hover:bg-[#266CA9] text-white font-medium py-2 px-4 rounded"
             disabled={loading}
           >
             {loading ? "Generating..." : "Submit"}
           </button>
 
           {summary && (
-            <div className="mt-6 bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 rounded shadow-md w-1/2">
+            <div className="mt-6 bg-[#ADEIFB] border-l-4 border-[#266CA9] text-[#041D56] p-4 rounded shadow-md w-1/2">
               <p className="text-center">{summary}</p>
             </div>
           )}

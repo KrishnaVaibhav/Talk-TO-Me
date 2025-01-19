@@ -13,7 +13,7 @@ function App() {
   return (
     <ChatProvider>
       <Router>
-        <div className="fixed top-0 bottom-0 right-0 left-0 flex flex-col min-h-screen">
+        <div className="fixed from-[#ADE1FB] to-white top-0 bottom-0 right-0 left-0 flex flex-col min-h-screen">
           <div className="flex-grow">
             <Routes>
               <Route path="/" element={<Home />} />
