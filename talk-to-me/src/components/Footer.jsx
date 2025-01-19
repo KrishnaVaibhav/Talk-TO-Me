@@ -13,7 +13,7 @@ const Footer = () => {
     } else if (action === "Home") {
       navigate("/"); // Navigate to the home page
     } else {
-      alert(`${action} clicked`);
+      navigate("/voice");
     }
   };
 
