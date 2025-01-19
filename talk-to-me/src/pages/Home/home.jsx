@@ -8,6 +8,9 @@ const Home = () => {
   const { chatClicked } = useContext(ChatContext);
   const [greeting, setGreeting] = useState("");
   const [quote, setQuote] = useState("");
+  const [heartbeat, setHeartbeat] = useState(70);
+  const [bloodPressure, setBloodPressure] = useState("122/82 mmHg");
+  const [steps, setSteps] = useState(0); // Set initial steps to 0
 
   const wellnessQuotes = [
     "Take a deep breath. It's just a bad day, not a bad life.",
@@ -43,6 +46,26 @@ const Home = () => {
     setQuote(randomQuote);
   }, []);
 
+  useEffect(() => {
+    const updateValues = () => {
+      setHeartbeat(Math.floor(Math.random() * (100 - 60 + 1)) + 60);
+      setBloodPressure(
+        `${Math.floor(Math.random() * (130 - 110 + 1)) + 110}/${
+          Math.floor(Math.random() * (90 - 70 + 1)) + 70
+        } mmHg`
+      );
+      setSteps(
+        (prevSteps) =>
+          prevSteps + Math.floor(Math.random() * (50 - 10 + 1)) + 10
+      );
+    };
+
+    updateValues();
+    const intervalId = setInterval(updateValues, 5000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div className="fixed left-0 right-0 flex flex-col items-center min-h-screen bg-gradient-to-t from-blue-50 to-white pb-20">
       <div className="container flex-grow w-full mx-auto bg-white rounded-lg shadow-lg p-6">
@@ -68,19 +91,25 @@ const Home = () => {
               <span className="text-sm font-small text-teal-600">
                 Heartbeat
               </span>
-              <span className="py-4 text-small text-gray-700">70 bpm</span>
+              <span className="py-4 text-small text-gray-700">
+                {heartbeat} bpm
+              </span>
             </div>
             <div className="flex flex-col items-center mb-4 md:mb-0">
               <FaTint className="text-teal-600 mb-2" />
               <span className="text-sm font-small text-teal-600">
                 Blood Pressure
               </span>
-              <span className="py-4 text-small text-gray-700">122/82 mmHg</span>
+              <span className="py-4 text-small text-gray-700">
+                {bloodPressure}
+              </span>
             </div>
             <div className="flex flex-col items-center">
               <FaWalking className="text-teal-600 mb-2" />
               <span className="text-sm font-small text-teal-600">Movement</span>
-              <span className="py-4 text-small text-gray-700">5,200 steps</span>
+              <span className="py-4 text-small text-gray-700">
+                {steps} steps
+              </span>
             </div>
           </div>
         </div>
@@ -96,6 +125,30 @@ const Home = () => {
           <button className="bg-teal-400 hover:bg-teal-500 text-white font-small py-2 px-6 rounded-lg shadow-sm">
             Breathing exercise reminder
           </button>
+        </div>
+
+        {/* Recommendations Section */}
+        <div className="mt-8 bg-teal-50 border-l-4 border-teal-600 text-teal-700 p-4 rounded-lg shadow-lg bg-opacity-60 backdrop-blur-sm">
+          <h2 className="text-xl font-semibold text-center text-teal-600 mb-4">
+            Recommendations
+          </h2>
+          <ul className="list-disc list-inside text-gray-700">
+            <li>Take a 5-minute walk every hour to stay active.</li>
+            <li>Drink at least 8 glasses of water daily.</li>
+            <li>Practice deep breathing exercises for 5 minutes.</li>
+          </ul>
+        </div>
+
+        {/* Challenges Section */}
+        <div className="mt-8 bg-teal-50 border-l-4 border-teal-600 text-teal-700 p-4 rounded-lg shadow-lg bg-opacity-60 backdrop-blur-sm">
+          <h2 className="text-xl font-semibold text-center text-teal-600 mb-4">
+            Challenges
+          </h2>
+          <ul className="list-disc list-inside text-gray-700">
+            <li>Complete 10,000 steps today.</li>
+            <li>Drink a glass of water every hour.</li>
+            <li>Take a 10-minute break to meditate.</li>
+          </ul>
         </div>
 
         {chatClicked && (
